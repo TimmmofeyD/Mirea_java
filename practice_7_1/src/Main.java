@@ -1,17 +1,61 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
+interface Movable {
+    void up();
+
+    void down();
+
+    void left();
+
+    void right();
+}
+
+
+class MovableRectangle implements Movable {
+    private int x;
+    private int y;
+    private final int width;
+    private final int length;
+
+    public MovableRectangle(int x, int y, int width, int length) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.length = length;
+    }
+
+    public void ToString() {
+        System.out.println("Length rectangle: " + this.length);
+        System.out.println("Width rectangle: " + this.width);
+        System.out.println("Coordinate rectangle: " + this.x + ", " + this.y);
+    }
+
+    @Override
+    public void up() {
+        this.y++;
+    }
+
+    @Override
+    public void down() {
+        this.y--;
+    }
+
+    @Override
+    public void left() {
+        this.x--;
+    }
+
+    @Override
+    public void right() {
+        this.x++;
+    }
+
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        MovableRectangle rectangle = new MovableRectangle(0, 0, 1, 1);
+        rectangle.ToString();
+        rectangle.up();
+        rectangle.left();
+        rectangle.down();
+        rectangle.right();
+        rectangle.down();
+        rectangle.ToString();
     }
 }
