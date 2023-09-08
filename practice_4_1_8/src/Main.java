@@ -12,7 +12,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         // Circle class test
-        Circle circle = new Circle(5.4, "black", true);
+        Circle circle = new Circle(0, "black", true);
+        System.out.println("Enter radius: ");
+        int radius_circle = in.nextInt();
+        circle.set_radius(radius_circle);
+        System.out.println("Enter color: ");
+        String color_circle = in.nextLine();
+        circle.set_color(color_circle);
         System.out.println(circle);
 
         // Rectangle class test
