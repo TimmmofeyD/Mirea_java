@@ -31,7 +31,7 @@ class Dog {
     Dog(String name, Integer age) {
         this.name = name;
         this.age = age;
-        System.out.println("\n[+] Dog object with name: " + this.name + " was created");
+        System.out.println("\nDog object with name: " + this.name + " was created");
     }
 
     // Age setter
@@ -72,7 +72,7 @@ class Dog_kennel {
     private List<Dog> dog_kennel_array = new ArrayList<Dog>();
 
     {
-        System.out.println("\n[+] Dog kennel object was created");
+        System.out.println("\n Dog kennel object was created");
     }
 
     // Add one dog
