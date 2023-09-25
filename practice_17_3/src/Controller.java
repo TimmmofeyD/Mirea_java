@@ -7,9 +7,9 @@ import javax.swing.Timer;
 import model.Snake;
 
 public class Controller implements KeyListener, ActionListener {
-    private Renderer renderer;
-    private Timer mainTimer;
-    private Snake snake;
+    private final Renderer renderer;
+    private final Timer mainTimer;
+    private final Snake snake;
 
     public Controller() {
         snake = new Snake();

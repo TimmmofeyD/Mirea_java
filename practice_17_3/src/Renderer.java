@@ -1,9 +1,6 @@
 import java.awt.Color;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Random;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -19,9 +16,9 @@ import model.Fruit;
 class Renderer extends JFrame {
     private final int WIDTH = 500;
     private final int HEIGHT = 300;
-    private Snake snake;
+    private final Snake snake;
 
-    private Controller controller;
+    private final Controller controller;
     public JPanel pamel1, panel2;
     public JButton[] ButtonBody = new JButton[200];
     public JButton bonusfood;
@@ -36,6 +33,7 @@ class Renderer extends JFrame {
         score = 0;
     }
 
+    @SuppressWarnings("deprecation")
     Renderer(Controller controller) {
         super("Snake: PSU edition");
         this.controller = controller;
@@ -98,19 +96,9 @@ class Renderer extends JFrame {
 
         JMenuItem newgame = new JMenuItem("Новая игра");
         JMenuItem exit = new JMenuItem("Выход");
-        newgame.addActionListener(new ActionListener() {
+        newgame.addActionListener(e -> reset());
 
-            public void actionPerformed(ActionEvent e) {
-                reset();
-            }
-        });
-
-        exit.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
+        exit.addActionListener(e -> System.exit(0));
 
         game.add(newgame);
         game.addSeparator();// Разделитель
@@ -122,13 +110,7 @@ class Renderer extends JFrame {
 
         JMenuItem creator = new JMenuItem("Автор");
 
-        creator.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(pamel1, "Refactoring by name?");
-
-            }
-        });
+        creator.addActionListener(e -> JOptionPane.showMessageDialog(pamel1, "Лищенко Тимофей Викторович"));
 
         help.add(creator);
         mybar.add(help);

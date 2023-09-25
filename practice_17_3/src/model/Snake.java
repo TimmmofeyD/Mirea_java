@@ -4,7 +4,7 @@ import java.awt.Point;
 import java.awt.event.KeyEvent;
 
 public class Snake {
-    private Point[] pointBody = new Point[300];
+    private final Point[] pointBody = new Point[300];
     private int length;
 
     private boolean isLeft;
@@ -32,7 +32,7 @@ public class Snake {
 
     public void onMove(int side) {
         switch (side) {
-            case KeyEvent.VK_LEFT:
+            case KeyEvent.VK_LEFT -> {
                 if (isLeft) {
                     setDirectionX(-10);
                     setDirectionY(0);
@@ -40,8 +40,8 @@ public class Snake {
                     isUp = true;
                     isDown = true;
                 }
-                break;
-            case KeyEvent.VK_UP:
+            }
+            case KeyEvent.VK_UP -> {
                 if (isUp) {
                     setDirectionX(0);
                     setDirectionY(-10);
@@ -49,8 +49,8 @@ public class Snake {
                     isRight = true;
                     isLeft = true;
                 }
-                break;
-            case KeyEvent.VK_DOWN:
+            }
+            case KeyEvent.VK_DOWN -> {
                 if (isDown) {
                     setDirectionX(0);
                     setDirectionY(+10);
@@ -58,8 +58,8 @@ public class Snake {
                     isRight = true;
                     isLeft = true;
                 }
-                break;
-            case KeyEvent.VK_RIGHT:
+            }
+            case KeyEvent.VK_RIGHT -> {
                 if (isRight) {
                     setDirectionX(+10);
                     setDirectionY(0);
@@ -67,10 +67,9 @@ public class Snake {
                     isUp = true;
                     isDown = true;
                 }
-                break;
-
-            default:
-                break;
+            }
+            default -> {
+            }
         }
 
     }
@@ -85,10 +84,6 @@ public class Snake {
 
     public Point[] getPointBody() {
         return pointBody;
-    }
-
-    public void setPointBody(Point[] pointBody) {
-        this.pointBody = pointBody;
     }
 
     public int getDirectionX() {
