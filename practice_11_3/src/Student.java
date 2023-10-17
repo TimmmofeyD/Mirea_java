@@ -67,8 +67,14 @@ public class Student {
     }
 
     public static void main(String[] args) {
-        Student student = new Student("Tim", "22:01:2009");
-        student.setForm("full");
-        System.out.println(student);
+        Student student_0 = new Student("Tim", "22:01:2009");
+        student_0.setForm("full");
+        Student student_1 = new Student("Dim", "22:01:2009");
+        student_1.setForm("short");
+        Student student_2 = new Student("Kim", "22:01:2009");
+        student_2.setForm("default");
+        System.out.println(student_0);
+        System.out.println(student_1);
+        System.out.println(student_2);
     }
 }
