@@ -31,9 +31,9 @@ public class Person {
 
     public static void main(String[] args) {
         Person person = new Person();
-        person.setLastName("Jumba");
-        person.setFirstName("");
-        person.setMaleName("");
+        person.setLastName("Лищенко");
+        person.setFirstName("Тимофей");
+        person.setMaleName("Викторович");
         System.out.println(person.getInfo());
     }
 }
